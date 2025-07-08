@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 interface Iprops extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	children: ReactNode;
-	className: string;
+	className?: string;
 	width?: "w-full" | "w-fit";
 }
 

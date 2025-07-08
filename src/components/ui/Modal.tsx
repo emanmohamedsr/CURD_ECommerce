@@ -24,7 +24,7 @@ const Modal = ({ isOpen, close, title, children }: IModalProps) => {
 							{title && (
 								<DialogTitle
 									as='h3'
-									className='text-base/7 font-medium text-gray-500'>
+									className='text-base/7 text-gray-700 font-bold '>
 									{title}
 								</DialogTitle>
 							)}

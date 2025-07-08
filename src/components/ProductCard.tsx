@@ -1,5 +1,6 @@
 import type { IProduct } from "../interfaces";
 import { txtSlicer } from "../utils/functions";
+import CircleColor from "./CircleColor";
 import Button from "./ui/Button";
 import Image from "./ui/Image";
 
@@ -20,17 +21,13 @@ const ProductCard = ({ product }: Iprops) => {
 			</div>
 
 			<div className='flex items-center flex-wrap gap-1.5'>
-				{colors.map((color, index) => (
-					<span
-						key={index}
-						className={`w-5 h-5 rounded-full cursor-pointer`}
-						style={{ backgroundColor: color }}
-					/>
+				{colors.map((color) => (
+					<CircleColor key={color} color={color} />
 				))}
 			</div>
 
 			<div className='flex items-center justify-between'>
-				<span className='font-bold'>{price}</span>
+				<span className='font-bold'>$ {price}</span>
 				<span>
 					<Image
 						imageURL={category.imageURL}
@@ -42,7 +39,7 @@ const ProductCard = ({ product }: Iprops) => {
 
 			<div className='flex items-center space-x-2'>
 				<Button
-					className='bg-blue-700'
+					className='bg-indigo-700'
 					width='w-full'
 					onClick={() => alert("Edit action triggered")}>
 					EDIT
