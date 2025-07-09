@@ -6,9 +6,10 @@ import Image from "./ui/Image";
 
 interface Iprops {
 	product: IProduct;
+	onEdit: (p: IProduct) => void;
 }
 
-const ProductCard = ({ product }: Iprops) => {
+const ProductCard = ({ product, onEdit }: Iprops) => {
 	const { title, description, imageURL, price, colors, category } = product;
 
 	return (
@@ -16,7 +17,7 @@ const ProductCard = ({ product }: Iprops) => {
 			<Image imageURL={imageURL} altText={title} className='rounded-md' />
 
 			<div>
-				<h3 className='font-bold text-md'>{title}</h3>
+				<h3 className='font-bold text-md'>{txtSlicer(title, 20)}</h3>
 				<p className='text-sm text-gray-600'>{txtSlicer(description)}</p>
 			</div>
 
@@ -41,7 +42,7 @@ const ProductCard = ({ product }: Iprops) => {
 				<Button
 					className='bg-indigo-700'
 					width='w-full'
-					onClick={() => alert("Edit action triggered")}>
+					onClick={() => onEdit(product)}>
 					EDIT
 				</Button>
 				<Button

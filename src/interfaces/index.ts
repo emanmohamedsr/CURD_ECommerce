@@ -1,4 +1,4 @@
-import type { ProductNameTypes } from "../types";
+import type { CategoryEnumType, ProductNameTypes } from "../types";
 
 export interface IProduct {
 	id?: string;
@@ -8,6 +8,7 @@ export interface IProduct {
 	price: string;
 	colors: string[];
 	category: {
+		id: CategoryEnumType;
 		name: string;
 		imageURL: string;
 	};
@@ -25,7 +26,7 @@ export interface IFormInput {
 }
 
 export interface ICategory {
-	id: string;
+	id: CategoryEnumType;
 	name: string;
 	imageURL: string;
 }

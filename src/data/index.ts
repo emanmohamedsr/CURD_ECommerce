@@ -1,5 +1,6 @@
 import { v4 as uuid } from "uuid";
 import type { ICategory, IFormInput, IProduct } from "../interfaces";
+import { CategoriesEnum } from "../constants";
 
 export const productList: IProduct[] = [
 	{
@@ -23,6 +24,7 @@ export const productList: IProduct[] = [
 			"#84D2C5",
 		],
 		category: {
+			id: CategoriesEnum.Nike,
 			name: "Nike",
 			imageURL:
 				"https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -38,6 +40,7 @@ export const productList: IProduct[] = [
 		price: "500000",
 		colors: ["#FF0032", "#2563eb", "#FF6E31"],
 		category: {
+			id: CategoriesEnum.Cars,
 			name: "Cars",
 			imageURL:
 				"https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -53,6 +56,7 @@ export const productList: IProduct[] = [
 		price: "120000",
 		colors: ["#A31ACB", "#3C2A21", "#1F8A70", "#820000", "#FF0032"],
 		category: {
+			id: CategoriesEnum.Cars,
 			name: "Cars",
 			imageURL:
 				"https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -68,6 +72,7 @@ export const productList: IProduct[] = [
 		price: "1500",
 		colors: [],
 		category: {
+			id: CategoriesEnum.PC_Desktop,
 			name: "PC Desktop",
 			imageURL:
 				"https://images.unsplash.com/photo-1552831388-6a0b3575b32a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
@@ -94,6 +99,7 @@ export const productList: IProduct[] = [
 			"#84D2C5",
 		],
 		category: {
+			id: CategoriesEnum.Nike,
 			name: "Nike",
 			imageURL:
 				"https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -109,6 +115,7 @@ export const productList: IProduct[] = [
 		price: "500000",
 		colors: ["#FF0032", "#2563eb", "#FF6E31"],
 		category: {
+			id: CategoriesEnum.Cars,
 			name: "Cars",
 			imageURL:
 				"https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -124,6 +131,7 @@ export const productList: IProduct[] = [
 		price: "120000",
 		colors: ["#A31ACB", "#3C2A21", "#1F8A70", "#820000", "#FF0032"],
 		category: {
+			id: CategoriesEnum.Cars,
 			name: "Cars",
 			imageURL:
 				"https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -139,6 +147,7 @@ export const productList: IProduct[] = [
 		price: "1500",
 		colors: [],
 		category: {
+			id: CategoriesEnum.PC_Desktop,
 			name: "PC Desktop",
 			imageURL:
 				"https://images.unsplash.com/photo-1552831388-6a0b3575b32a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
@@ -189,43 +198,43 @@ export const colors: string[] = [
 
 export const categories: ICategory[] = [
 	{
-		id: uuid(),
+		id: CategoriesEnum.Nike,
 		name: "Nike",
 		imageURL:
 			"https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
 	},
 	{
-		id: uuid(),
+		id: CategoriesEnum.TShirt,
 		name: "T-Shirt",
 		imageURL:
 			"https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
 	},
 	{
-		id: uuid(),
+		id: CategoriesEnum.Clothes,
 		name: "Clothes",
 		imageURL:
 			"https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
 	},
 	{
-		id: uuid(),
+		id: CategoriesEnum.PC_Desktop,
 		name: "PC Desktop",
 		imageURL:
 			"https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1142&q=80",
 	},
 	{
-		id: uuid(),
+		id: CategoriesEnum.Furniture,
 		name: "Furniture",
 		imageURL:
 			"https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
 	},
 	{
-		id: uuid(),
+		id: CategoriesEnum.Cars,
 		name: "Cars",
 		imageURL:
 			"https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
 	},
 	{
-		id: uuid(),
+		id: CategoriesEnum.Camera,
 		name: "Camera",
 		imageURL:
 			"https://images.unsplash.com/photo-1502920917128-1aa500764cbd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",

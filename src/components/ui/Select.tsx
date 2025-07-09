@@ -11,7 +11,7 @@ import {
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 
 interface OptionItem {
-	id: string;
+	id: number;
 	name: string;
 	imageURL: string;
 }

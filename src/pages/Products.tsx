@@ -4,12 +4,13 @@ import type { IProduct } from "../interfaces";
 
 interface IProps {
 	products: IProduct[];
+	onEdit: (p: IProduct) => void;
 }
 
-const Products = ({ products }: IProps) => {
+const Products = ({ products, onEdit }: IProps) => {
 	const productsList = products.map((product) => (
 		<Fragment key={product.id}>
-			<ProductCard product={product} />
+			<ProductCard product={product} onEdit={onEdit} />
 		</Fragment>
 	));
 

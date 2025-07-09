@@ -1,5 +1,3 @@
-import { v4 as uuid } from "uuid";
-
 import ErrorMessage from "../ErrorMessage";
 import Button from "./Button";
 import CircleColor from "../CircleColor";
@@ -15,17 +13,10 @@ interface Iprops {
 	product: IProduct;
 	setProduct: (p: IProduct) => void;
 	closeModal: () => void;
-	products: IProduct[];
-	setProducts: (ps: IProduct[]) => void;
+	productsHandler: (p: IProduct) => void;
 }
 
-const Form = ({
-	product,
-	setProduct,
-	closeModal,
-	products,
-	setProducts,
-}: Iprops) => {
+const Form = ({ product, setProduct, closeModal, productsHandler }: Iprops) => {
 	/** States */
 	const [productErrors, setProductErrors] =
 		useState<IProductError>(defaultProductErrors);
@@ -49,10 +40,7 @@ const Form = ({
 
 		if (!errors) {
 			console.log("submitted 🟢", product);
-			setProducts([
-				{ ...product, id: uuid(), category: selectedCat },
-				...products,
-			]);
+			productsHandler(product);
 			reset();
 			closeModal();
 		}
@@ -67,7 +55,6 @@ const Form = ({
 	const reset = () => {
 		setProduct(defaultProductObj);
 		setProductErrors(defaultProductErrors);
-		setSelectedCat(cats[0]);
 	};
 	/** ----------------------------------- */
 	/** Input Fields */
@@ -119,15 +106,14 @@ const Form = ({
 	/** ----------------------------------- */
 	/** Category Handling */
 	const cats: ICategory[] = categories;
-	const [selectedCat, setSelectedCat] = useState(cats[0]);
 	/** ----------------------------------- */
 	return (
 		<form onSubmit={formSubmitHandler} className='space-y-3'>
 			{inputFields}
 
 			<Select<ICategory>
-				selectedItem={selectedCat}
-				setSelectedItem={setSelectedCat}
+				selectedItem={product.category}
+				setSelectedItem={(cat) => setProduct({ ...product, category: cat })}
 				title='Category'
 				objs={cats}
 			/>
