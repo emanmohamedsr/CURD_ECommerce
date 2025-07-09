@@ -23,7 +23,6 @@ const Form = ({ product, setProduct, closeModal, productsHandler }: Iprops) => {
 
 	/** Form Handling Functions */
 	const formSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
-		console.log("OnSubmit 🟠");
 		e.preventDefault();
 
 		const errors = productValidation({
@@ -39,7 +38,6 @@ const Form = ({ product, setProduct, closeModal, productsHandler }: Iprops) => {
 		}
 
 		if (!errors) {
-			console.log("submitted 🟢", product);
 			productsHandler(product);
 			reset();
 			closeModal();
@@ -47,7 +45,6 @@ const Form = ({ product, setProduct, closeModal, productsHandler }: Iprops) => {
 	};
 
 	const onCancle = () => {
-		console.log("cancled 🟡");
 		reset();
 		closeModal();
 	};
