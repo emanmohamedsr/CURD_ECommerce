@@ -1,38 +1,14 @@
-# 🛍️ E-Commerce Store
+# E-Commerce Store
 
 A simple, clean, and well-structured e-commerce front-end built with **React Vite**, **TypeScript**, and **Tailwind CSS**. This project allows you to add, edit, and display products with color and category selections.
 
 ---
 
-## 📸 Demo
-
-[Live Demo](https://curd-e-commerce.vercel.app/)
+## [Demo Live Site](https://curd-e-commerce.vercel.app/)
 
 ---
 
-## 🖼️ App Previews
-
-### 🏠 Home Page
-
-![Home Preview](./src/assets/HomePreview.png)
-
-### ✏️ Edit Product
-
-![Edit Product Preview](./src/assets/EditProductPreview.png)
-
-### 🧾 Form Validation
-
-![Form Validation Preview](./src/assets/FromValidationPreview.png)
-
-### 🧾 Alerts
-
-![Deleting Alert Preview](./src/assets/DeletingAlert.png)
-
-### 🧾 Affirmations
-
-![Affirmations Preview](./src/assets/Affirmations.png)
-
-## ✨ Features
+## Features
 
 - Add & Edit product via modal form
 - Color selection with visual indicators
@@ -44,7 +20,19 @@ A simple, clean, and well-structured e-commerce front-end built with **React Vit
 
 ---
 
-## 🧩 Project Structure
+## Tech Stack
+
+- [React](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Headless UI](https://headlessui.com)
+- [Heroicons](https://heroicons.com)
+- [toast](https://react-hot-toast.com)
+- [uuid](https://www.npmjs.com/package/uuid)
+
+---
+
+## Project Structure
 
 ```
 src/
@@ -88,7 +76,37 @@ src/
 
 ---
 
-## 🚀 Getting Started
+### Lighthouse Analysis
+
+![Analysis](./src/assets/lighthouse%20analysis.png)
+
+---
+
+## App Previews
+
+### Home Page
+
+![Home Preview](./src/assets/HomePreview.png)
+
+### Edit Product
+
+![Edit Product Preview](./src/assets/EditProductPreview.png)
+
+### Form Validation
+
+![Form Validation Preview](./src/assets/FromValidationPreview.png)
+
+### Alerts
+
+![Deleting Alert Preview](./src/assets/DeletingAlert.png)
+
+### Affirmations
+
+![Affirmations Preview](./src/assets/Affirmations.png)
+
+---
+
+## Getting Started
 
 ### 1. Clone the repo
 
@@ -112,17 +130,3 @@ npm run dev
 # or
 yarn dev
 ```
-
----
-
-## 🛠️ Tech Stack
-
-- [React](https://reactjs.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Headless UI](https://headlessui.com)
-- [Heroicons](https://heroicons.com)
-- [toast](https://react-hot-toast.com)
-- [uuid](https://www.npmjs.com/package/uuid)
-
----
