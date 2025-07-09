@@ -37,7 +37,10 @@ const Home = () => {
 					Add Product
 				</Button>
 
-				<Modal isOpen={isOpenModal} close={closeModal} title='product Handling'>
+				<Modal
+					isOpen={isOpenModal}
+					close={closeModal}
+					title={product.id ? "Edit A Product" : "Add A New Product"}>
 					<Form
 						product={product}
 						setProduct={setProduct}
