@@ -6,6 +6,8 @@ A simple, clean, and well-structured e-commerce front-end built with **React Vit
 
 ## 📸 Demo
 
+[Live Demo](https://curd-e-commerce.vercel.app/)
+
 ---
 
 ## 🖼️ App Previews
@@ -120,6 +122,7 @@ yarn dev
 - [Tailwind CSS](https://tailwindcss.com)
 - [Headless UI](https://headlessui.com)
 - [Heroicons](https://heroicons.com)
+- [toast](https://react-hot-toast.com)
 - [uuid](https://www.npmjs.com/package/uuid)
 
 ---
