@@ -22,6 +22,10 @@ A simple, clean, and well-structured e-commerce front-end built with **React Vit
 
 ![Form Validation Preview](./src/assets/FromValidationPreview.png)
 
+### 🧾 Form Validation
+
+![Deleting Alert Preview](./src/assets/DeletingAlert.png)
+
 ## ✨ Features
 
 - Add & Edit product via modal form

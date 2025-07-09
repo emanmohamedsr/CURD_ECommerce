@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { IProduct } from "../interfaces";
-import { txtSlicer } from "../utils/functions";
+import { numberWithCommas, txtSlicer } from "../utils/functions";
 import CircleColor from "./CircleColor";
 import Button from "./ui/Button";
 import Image from "./ui/Image";
@@ -49,7 +49,7 @@ const ProductCard = ({ product, onEdit, onDelete }: Iprops) => {
 			</div>
 
 			<div className='flex items-center justify-between'>
-				<span className='font-bold'>$ {price}</span>
+				<span className='font-bold'>$ {numberWithCommas(price)}</span>
 				<span>
 					<Image
 						imageURL={category.imageURL}
