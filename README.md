@@ -1,69 +1,103 @@
-# React + TypeScript + Vite
+# 🛍️ E-Commerce Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, clean, and well-structured e-commerce front-end built with **React Vite**, **TypeScript**, and **Tailwind CSS**. This project allows you to add, edit, and display products with color and category selections.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Demo
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Add & Edit product via modal form
+- Color selection with visual indicators
+- Category dropdown with image thumbnails
+- Reusable form component for both creation & editing
+- Fully typed using TypeScript
+- Tailwind-based modern UI
+- Simple mock data with local state
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🧩 Project Structure
+
+```
+src/
+│
+├── assets/
+│
+├── components/
+│   ├── ui/
+│   │   ├── Button.tsx
+│   │   ├── Form.tsx
+│   │   ├── Image.tsx
+│   │   ├── Input.tsx
+│   │   ├── Modal.tsx
+│   │   └── Select.tsx
+│   ├── CircleColor.tsx
+|   ├── ErrorMessage.tsx
+│   ├── ProductCard.tsx
+│
+├── constants/
+│   └── index.ts
+│
+├── data/
+│   └── index.ts
+│
+├── interfaces/
+│   └── index.ts
+│
+├── pages/
+│   ├── Home.tsx
+│   └── Products.tsx
+│
+├── types/
+│   └── index.ts
+│
+├── utils/
+│   └── functions.ts
+│
+└── validation/
+    └── index.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Getting Started
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/your-username/ecommerce-store.git
+cd ecommerce-store
 ```
+
+### 2. Install dependencies
+
+```bash
+npm install
+# or
+yarn
+```
+
+### 3. Run the app
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+---
+
+## 🛠️ Tech Stack
+
+- [React](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Headless UI](https://headlessui.com)
+- [Heroicons](https://heroicons.com)
+- [uuid](https://www.npmjs.com/package/uuid)
+
+---
