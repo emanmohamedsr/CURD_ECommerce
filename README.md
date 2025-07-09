@@ -69,8 +69,8 @@ src/
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/ecommerce-store.git
-cd ecommerce-store
+git clone https://github.com/emanmohamedsr/CURD_ECommerce.git
+cd CURD_ECommerce
 ```
 
 ### 2. Install dependencies
