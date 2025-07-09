@@ -1,8 +1,10 @@
+import { useState } from "react";
 import type { IProduct } from "../interfaces";
 import { txtSlicer } from "../utils/functions";
 import CircleColor from "./CircleColor";
 import Button from "./ui/Button";
 import Image from "./ui/Image";
+import Modal from "./ui/Modal";
 
 interface Iprops {
 	product: IProduct;
@@ -13,12 +15,30 @@ interface Iprops {
 const ProductCard = ({ product, onEdit, onDelete }: Iprops) => {
 	const { title, description, imageURL, price, colors, category } = product;
 
+	const [isOpenDeleteModal, setisOpenDeleteModal] = useState(false);
+	const openDeleteModal = () => setisOpenDeleteModal(true);
+	const closeDeleteModal = () => setisOpenDeleteModal(false);
+
+	const deleteAlertComfirmHandling = () => {
+		onDelete(product);
+		closeDeleteModal();
+	};
+	const deleteAlertCancelHandling = () => {
+		closeDeleteModal();
+	};
+
 	return (
 		<div className='max-w-sm mx-auto flex flex-col justify-between gap-3 p-2 bg-white border border-gray-200 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300'>
-			<Image imageURL={imageURL} altText={title} className='rounded-md' />
+			<Image
+				imageURL={imageURL}
+				altText={title}
+				width={250}
+				height={200}
+				className='mx-auto rounded-md'
+			/>
 
 			<div>
-				<h3 className='font-bold text-md'>{txtSlicer(title, 20)}</h3>
+				<h2 className='font-bold text-md'>{txtSlicer(title, 20)}</h2>
 				<p className='text-sm text-gray-600'>{txtSlicer(description)}</p>
 			</div>
 
@@ -34,7 +54,9 @@ const ProductCard = ({ product, onEdit, onDelete }: Iprops) => {
 					<Image
 						imageURL={category.imageURL}
 						altText={category.name}
-						className='w-10 h-10 rounded-full object-cover'
+						width={40}
+						height={40}
+						className='rounded-full object-cover'
 					/>
 				</span>
 			</div>
@@ -49,10 +71,34 @@ const ProductCard = ({ product, onEdit, onDelete }: Iprops) => {
 				<Button
 					className='bg-red-700'
 					width='w-full'
-					onClick={() => onDelete(product)}>
+					onClick={() => {
+						openDeleteModal();
+					}}>
 					DELETE
 				</Button>
 			</div>
+			<Modal
+				close={closeDeleteModal}
+				isOpen={isOpenDeleteModal}
+				title='🔔 Alert!!'>
+				<p className='mb-5 text-gray-700'>
+					Are You sure about deleting that product?
+				</p>
+				<div className='flex items-center space-x-3'>
+					<Button
+						className='bg-red-700'
+						width='w-full'
+						onClick={deleteAlertComfirmHandling}>
+						Confirm
+					</Button>
+					<Button
+						className='bg-gray-400'
+						width='w-full'
+						onClick={deleteAlertCancelHandling}>
+						Cancel
+					</Button>
+				</div>
+			</Modal>
 		</div>
 	);
 };
