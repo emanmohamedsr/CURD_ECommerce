@@ -5,12 +5,13 @@ import type { IProduct } from "../interfaces";
 interface IProps {
 	products: IProduct[];
 	onEdit: (p: IProduct) => void;
+	onDelete: (p: IProduct) => void;
 }
 
-const Products = ({ products, onEdit }: IProps) => {
+const Products = ({ products, onEdit, onDelete }: IProps) => {
 	const productsList = products.map((product) => (
 		<Fragment key={product.id}>
-			<ProductCard product={product} onEdit={onEdit} />
+			<ProductCard product={product} onEdit={onEdit} onDelete={onDelete} />
 		</Fragment>
 	));
 

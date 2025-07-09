@@ -23,6 +23,9 @@ const Home = () => {
 	const productEditHandler = (p: IProduct) => {
 		setProducts((prev) => prev.map((item) => (item.id === p.id ? p : item)));
 	};
+	const productDeleteHandler = (p: IProduct) => {
+		setProducts((prev) => prev.filter((item) => item.id !== p.id));
+	};
 
 	return (
 		<div>
@@ -58,6 +61,7 @@ const Home = () => {
 					setProduct(p);
 					openModal();
 				}}
+				onDelete={productDeleteHandler}
 			/>
 		</div>
 	);

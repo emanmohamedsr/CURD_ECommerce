@@ -7,9 +7,10 @@ import Image from "./ui/Image";
 interface Iprops {
 	product: IProduct;
 	onEdit: (p: IProduct) => void;
+	onDelete: (p: IProduct) => void;
 }
 
-const ProductCard = ({ product, onEdit }: Iprops) => {
+const ProductCard = ({ product, onEdit, onDelete }: Iprops) => {
 	const { title, description, imageURL, price, colors, category } = product;
 
 	return (
@@ -48,7 +49,7 @@ const ProductCard = ({ product, onEdit }: Iprops) => {
 				<Button
 					className='bg-red-700'
 					width='w-full'
-					onClick={() => alert("Delete action triggered")}>
+					onClick={() => onDelete(product)}>
 					DELETE
 				</Button>
 			</div>

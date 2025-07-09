@@ -1,7 +1,7 @@
 import type { CategoryEnumType, ProductNameTypes } from "../types";
 
 export interface IProduct {
-	id?: string;
+	id: string;
 	title: string;
 	description: string;
 	imageURL: string;
@@ -14,7 +14,8 @@ export interface IProduct {
 	};
 }
 
-export interface IProductError extends Omit<IProduct, "category" | "colors"> {
+export interface IProductError
+	extends Omit<IProduct, "id" | "category" | "colors"> {
 	colors: string;
 }
 
