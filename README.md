@@ -22,9 +22,13 @@ A simple, clean, and well-structured e-commerce front-end built with **React Vit
 
 ![Form Validation Preview](./src/assets/FromValidationPreview.png)
 
-### 🧾 Form Validation
+### 🧾 Alerts
 
 ![Deleting Alert Preview](./src/assets/DeletingAlert.png)
+
+### 🧾 Affirmations
+
+![Affirmations Preview](./src/assets/Affirmations.png)
 
 ## ✨ Features
 

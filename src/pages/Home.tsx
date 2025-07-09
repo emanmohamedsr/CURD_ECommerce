@@ -8,6 +8,7 @@ import { productList } from "../data";
 import { defaultProductObj } from "../constants";
 
 import { v4 as uuid } from "uuid";
+import toast, { Toaster } from "react-hot-toast";
 
 const Home = () => {
 	const [products, setProducts] = useState<IProduct[]>(productList);
@@ -19,12 +20,15 @@ const Home = () => {
 
 	const productAdditionHandler = (p: IProduct) => {
 		setProducts([{ ...p, id: uuid() }, ...products]);
+		toast.success("Product has been added successfully");
 	};
 	const productEditHandler = (p: IProduct) => {
 		setProducts((prev) => prev.map((item) => (item.id === p.id ? p : item)));
+		toast.success("Product has been edited successfully");
 	};
 	const productDeleteHandler = (p: IProduct) => {
 		setProducts((prev) => prev.filter((item) => item.id !== p.id));
+		toast.success("Product has been deleted successfully");
 	};
 
 	return (
@@ -62,6 +66,14 @@ const Home = () => {
 					openModal();
 				}}
 				onDelete={productDeleteHandler}
+			/>
+			<Toaster
+				toastOptions={{
+					style: {
+						background: "#a7a7a7",
+						color: "#fff",
+					},
+				}}
 			/>
 		</div>
 	);
