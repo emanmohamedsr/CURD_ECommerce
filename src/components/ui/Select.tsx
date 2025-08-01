@@ -9,12 +9,10 @@ import {
 } from "@headlessui/react";
 
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import { memo } from "react";
+import type { ICategory } from "../../interfaces";
 
-interface OptionItem {
-	id: number;
-	name: string;
-	imageURL: string;
-}
+type OptionItem = ICategory;
 
 interface IProps<T extends OptionItem> {
 	selectedItem: T;
@@ -78,4 +76,4 @@ const Select = <T extends OptionItem>({
 	);
 };
 
-export default Select;
+export default memo(Select);

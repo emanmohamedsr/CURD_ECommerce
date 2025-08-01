@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import type { IProduct } from "../interfaces";
 import { numberWithCommas, txtSlicer } from "../utils/functions";
 import CircleColor from "./CircleColor";
@@ -103,4 +103,4 @@ const ProductCard = ({ product, onEdit, onDelete }: Iprops) => {
 	);
 };
 
-export default ProductCard;
+export default memo(ProductCard);

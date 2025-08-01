@@ -1,5 +1,5 @@
+import { memo } from "react";
 import type { IFormInput } from "../../interfaces";
-
 interface Iprops extends React.InputHTMLAttributes<HTMLInputElement> {
 	input: IFormInput;
 }
@@ -18,4 +18,4 @@ const Input = ({ input, ...rest }: Iprops) => {
 	);
 };
 
-export default Input;
+export default memo(Input);
