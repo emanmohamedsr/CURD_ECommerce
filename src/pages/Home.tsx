@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Button from "../components/ui/Button";
 import Modal from "../components/ui/Modal";
 import Products from "./Products";
@@ -26,10 +26,10 @@ const Home = () => {
 		setProducts((prev) => prev.map((item) => (item.id === p.id ? p : item)));
 		toast.success("Product has been edited successfully");
 	};
-	const productDeleteHandler = (p: IProduct) => {
+	const productDeleteHandler = useCallback((p: IProduct) => {
 		setProducts((prev) => prev.filter((item) => item.id !== p.id));
 		toast.success("Product has been deleted successfully");
-	};
+	}, []);
 
 	return (
 		<div>
@@ -61,10 +61,10 @@ const Home = () => {
 
 			<Products
 				products={products}
-				onEdit={(p) => {
+				onEdit={useCallback((p) => {
 					setProduct(p);
 					openModal();
-				}}
+				}, [])}
 				onDelete={productDeleteHandler}
 			/>
 			<Toaster

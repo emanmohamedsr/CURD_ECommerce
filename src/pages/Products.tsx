@@ -1,6 +1,7 @@
 import { Fragment } from "react/jsx-runtime";
 import ProductCard from "../components/ProductCard";
 import type { IProduct } from "../interfaces";
+import { memo } from "react";
 
 interface IProps {
 	products: IProduct[];
@@ -24,4 +25,4 @@ const Products = ({ products, onEdit, onDelete }: IProps) => {
 	);
 };
 
-export default Products;
+export default memo(Products);
