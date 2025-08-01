@@ -3,7 +3,14 @@ import Button from "./Button";
 import CircleColor from "../CircleColor";
 import type { ICategory, IProduct, IProductError } from "../../interfaces";
 import { categories, colors, formInputsList } from "../../data";
-import { memo, useState, type ChangeEvent, type FormEvent } from "react";
+import {
+	memo,
+	useCallback,
+	useState,
+	type ChangeEvent,
+	type Dispatch,
+	type FormEvent,
+} from "react";
 import Select from "./Select";
 import Input from "./Input";
 import { productValidation } from "../../validation";
@@ -11,7 +18,7 @@ import { defaultProductErrors, defaultProductObj } from "../../constants";
 
 interface Iprops {
 	product: IProduct;
-	setProduct: (p: IProduct) => void;
+	setProduct: Dispatch<React.SetStateAction<IProduct>>;
 	closeModal: () => void;
 	productsHandler: (p: IProduct) => void;
 }
@@ -55,11 +62,15 @@ const Form = ({ product, setProduct, closeModal, productsHandler }: Iprops) => {
 	};
 	/** ----------------------------------- */
 	/** Input Fields */
-	const formInputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-		const { name, value } = e.target;
-		setProduct({ ...product, [name]: value });
-		setProductErrors({ ...productErrors, [name]: "" });
-	};
+	const formInputChangeHandler = useCallback(
+		(e: ChangeEvent<HTMLInputElement>) => {
+			const { name, value } = e.target;
+			setProduct((prev) => ({ ...prev, [name]: value }));
+			setProductErrors((prev) => ({ ...prev, [name]: "" }));
+		},
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+		[],
+	);
 	const inputFields = formInputsList.map((input) => (
 		<label
 			key={input.id}
