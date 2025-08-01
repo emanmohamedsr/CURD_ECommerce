@@ -3,7 +3,7 @@ import Button from "./Button";
 import CircleColor from "../CircleColor";
 import type { ICategory, IProduct, IProductError } from "../../interfaces";
 import { categories, colors, formInputsList } from "../../data";
-import { useState, type ChangeEvent, type FormEvent } from "react";
+import { memo, useState, type ChangeEvent, type FormEvent } from "react";
 import Select from "./Select";
 import Input from "./Input";
 import { productValidation } from "../../validation";
@@ -108,7 +108,7 @@ const Form = ({ product, setProduct, closeModal, productsHandler }: Iprops) => {
 		<form onSubmit={formSubmitHandler} className='space-y-3'>
 			{inputFields}
 
-			<Select<ICategory>
+			<Select
 				selectedItem={product.category}
 				setSelectedItem={(cat) => setProduct({ ...product, category: cat })}
 				title='Category'
@@ -146,4 +146,4 @@ const Form = ({ product, setProduct, closeModal, productsHandler }: Iprops) => {
 	);
 };
 
-export default Form;
+export default memo(Form);

@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 interface Iprops {
 	imageURL: string;
 	altText: string;
@@ -19,4 +21,4 @@ const Image = ({ imageURL, altText, className, width, height }: Iprops) => {
 	);
 };
 
-export default Image;
+export default memo(Image);
